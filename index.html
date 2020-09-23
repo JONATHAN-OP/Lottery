@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Website</title>
+</head>
+<body>
+    <header>
+      <div class="content">
+          <h1>
+            <span>L</span>
+            <span>o</span>
+            <span>t</span>
+            <span>t</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+          </h1>
+          
+      </div> 
+    </header>
+    <section>
+      <div class="card">
+        <div class="box">
+          <div class="step">
+            <h1># 1</h1>
+            <p>VERY OFTEN,YOU CAN WIN A LOTTERY.NOW CHOOSE A TWO DIGIT NUMBER BY CLICKING ON BELOW BUTTON AND REMEMBER THE NUMBER.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="step">
+            <h1># 2</h1>
+            <p>NOW PUT THE SELECTED NUMBER IN THE GIVEN BOX AND TRY YOUR LUCK BY CLICKING ON INSPECT BUTTON .</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="step">
+            <h1># 3</h1>
+            <p> IF YOUR LUCK FAVORS,YOU WILL WIN A FORTUNE IN A LOTTERY BUT ON THE OTHER HAND YOU MAY BE DISAPPOINTED FOR NOT WINNING FORTUNE. BETTER LUCK NEXT TIME!</p>
+          </div>
+        </div>
+      </div>
+      <div class="no" id="no">
+        <h1 id="output"></h1>
+      </div>
+      <div class="button">
+        <a id="btn">TRY YOUR FATE !!</a> 
+        
+      </div>
+      
+    </section>
+    <div class="second" id="second">
+      <div class="contain">
+        
+          <input class="textbox" id="textbox" type="text" autocomplete="off">
+          <img id="img" src="" alt="">
+          <h1 id="congrats"> !! KUDOS !!</h1>
+          <button class="go" id="go" onclick="mag()">INSPECT</button>
+        
+      </div>
+      
+    </div>
+    <footer>
+      <div class="img-data">
+          <div class="footerimg">
+              <img src="footer.png" alt="" class="img-gal">
+          </div>
+          <div class="bars">
+              <img src="gmail.png" alt="">
+              <img src="instagram.png" alt="">
+              <img src="facebook.png" alt="">
+          </div>
+          <span class="dot">.</span>
+      </div>
+      <h6 class="copyright">&copy; CSI-AKGEC 2018</h6>
+  </footer>
+
+    
+
+    <script>
+      // document.getElementById("btn").addEventListener("click",function()
+      //   {
+      //    let step1 = 10;
+      //     let step2 = math.random()*step1;
+      //     let result = math.floor(step2) + 20;
+      //     document.getElementById("two").innerHTML = Math.floor(Math.random()*10) + 20;
+      //     var myBox= document.getElementById("no");
+      //     myBox.style.display="block"
+
+      //   }   
+      // );
+      var btn = document.querySelector('#btn');
+      var second = document.querySelector('#second');
+      // let output = document.querySelector('#output');
+      // let go = document.querySelector('#go');
+      // 
+
+      function getrandom(max, min){
+        let step1 = max - min + 1;
+        let step2 = Math.random() * step1;
+        let result = Math.floor(step2) + min;
+        return result;
+      }
+      btn.addEventListener( 'click', () =>{
+        output.innerText = getrandom(9,20);
+        btn.style.display = 'none'; 
+               
+      });
+
+      function mag(){
+        var x = document.getElementById('textbox').value;
+        var img = document.getElementById('img')
+        if(x == 13){
+          img.style.display = "block";
+          img.src = "jo.jpg"
+          document.getElementById('congrats').style.display = "block";
+          document.getElementById('go').style.display = 'none';
+          document.getElementById('textbox').style.display = 'none';
+        }
+        else if(x == 18){
+          img.style.display = "block";
+          img.src = "po.jpg"
+          document.getElementById('congrats').style.display = "block";
+          document.getElementById('go').style.display = 'none';
+          document.getElementById('textbox').style.display = 'none';
+        }
+        else if(x == 17){
+          img.style.display = "block";
+          img.src = "do.jpg"
+          document.getElementById('congrats').style.display = "block";
+          document.getElementById('go').style.display = 'none';
+          document.getElementById('textbox').style.display = 'none';
+        }
+        else{
+          img.style.display = "block";
+          img.src = "loss.jpg"
+          var c = document.getElementById('congrats');
+          c.style.display = "block";
+          c.innerText = "||BETTER LUCK NEXT TIME||";
+          document.getElementById('go').style.display = 'none';
+          document.getElementById('textbox').style.display = 'none';
+          
+        }
+      }
+      // function condition()
+      // go.addEventListener('click', ()=>{
+      //   if(x=='26') 
+      //   console.log('good');
+      // });
+      // console.log('good');
+
+    </script>
+</body>
+</html>
