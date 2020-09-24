@@ -58,7 +58,7 @@
           <input class="textbox" id="textbox" type="text" autocomplete="off">
           <img id="img" src="" alt="">
           <h1 id="congrats"> !! KUDOS !!</h1>
-          <button class="go" id="go" onclick="mag()">INSPECT</button>
+          <button class="go" id="go" onclick="lot()">INSPECT</button>
         
       </div>
       
@@ -81,22 +81,8 @@
     
 
     <script>
-      // document.getElementById("btn").addEventListener("click",function()
-      //   {
-      //    let step1 = 10;
-      //     let step2 = math.random()*step1;
-      //     let result = math.floor(step2) + 20;
-      //     document.getElementById("two").innerHTML = Math.floor(Math.random()*10) + 20;
-      //     var myBox= document.getElementById("no");
-      //     myBox.style.display="block"
-
-      //   }   
-      // );
       var btn = document.querySelector('#btn');
       var second = document.querySelector('#second');
-      // let output = document.querySelector('#output');
-      // let go = document.querySelector('#go');
-      // 
 
       function getrandom(max, min){
         let step1 = max - min + 1;
@@ -106,11 +92,10 @@
       }
       btn.addEventListener( 'click', () =>{
         output.innerText = getrandom(9,20);
-        btn.style.display = 'none'; 
-               
+        btn.style.display = 'none';   
       });
 
-      function mag(){
+      function lot(){
         var x = document.getElementById('textbox').value;
         var img = document.getElementById('img')
         if(x == 13){
@@ -145,13 +130,7 @@
           
         }
       }
-      // function condition()
-      // go.addEventListener('click', ()=>{
-      //   if(x=='26') 
-      //   console.log('good');
-      // });
-      // console.log('good');
-
+    
     </script>
 </body>
 </html>
